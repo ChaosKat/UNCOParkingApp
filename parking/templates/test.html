@@ -1,1 +1,91 @@
-<p style="color:rgb(194, 223, 248)">Hello world!</p>
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UNCO Parking App</title>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+    <style>
+        .main-section {
+            background-color: #063970;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+            min-height: 100vh;
+        }
+        .banner {
+            width: 100%;
+            text-align: center;
+            padding: 20px 0;
+            background-color: rgb(255, 191, 0);
+        }
+        .map-container {
+            flex-grow: 1;
+            width: 80%;
+            height: 500px;
+            background-color: white;
+            margin: 20px 0;
+        }
+        .buttons-container {
+            width: 100%;
+            text-align: center;
+            background-color: white;
+            padding: 20px 0;
+        }
+    </style>
+</head>
+<body>
+    <section class="main-section">  
+        <div class="banner">
+            <img src="/static/Images/Screenshot 2025-01-23 002417.png" alt="UNCO Parking App Logo" class="logo" height="200"width="400">
+        </div>
+    
+        <div class="map-container" id="map">
+            <!-- Map will be embedded here -->
+        </div>
+    
+        <div class="buttons-container">
+            <div class="container">
+                <input type="text" id="searchBox" placeholder="Search for a location...">
+                <button onclick="searchLocation()">Search</button>
+            </div>
+        
+            <div class="container">
+                <button onclick="openGoogleMaps()">Open in Google Maps</button>
+            </div>
+        
+            <div class="container">
+                <label for="filter">Filter Parking Lots:</label>
+                <select id="filter" onchange="filterParkingLots()">
+                    <option value="all">All</option>
+                    <option value="student">Student Parking</option>
+                    <option value="faculty">Faculty Parking</option>
+                </select>
+            </div>
+        
+            <div class="container">
+                <button onclick="openPassportParking()">
+                    <img src="/static/Images/Passport-Logo.svg" alt="Passport-Logo" class="logo">
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    <script>
+        var map = L.map('map').setView([40.4028, -104.7003], 13);
+        
+        L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+        }).addTo(map);
+        
+        L.marker([40.4028, -104.7003]).addTo(map)
+            .bindPopup('A pretty CSS popup.<br> Easily customizable.')
+            .openPopup();
+    </script>
+    <script src="{% static 'js/scripts.js' %}"></script>
+</body>
+</html>
