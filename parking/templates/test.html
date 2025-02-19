@@ -20,7 +20,7 @@
             width: 100%;
             text-align: center;
             padding: 20px 0;
-            background-color: rgb(255, 191, 0);
+            background-color: rgb(255, 255, 255);
         }
         .logo {
             filter: drop-shadow(0px 0px 0px white); /* Ensures smooth edges */
@@ -48,7 +48,7 @@
             padding: 10px 15px;
             font-size: 16px;
             border: none;
-            background-color: #FFD700;
+            background-color: #f4cf03;
             cursor: pointer;
             border-radius: 5px;
         }
@@ -74,7 +74,7 @@
             justify-content: center;
             gap: 20px;
             width: 100%;
-            background-color: white;
+            background-color:#FFD700;
             padding: 20px 0;
         }
         .buttons-container button {
@@ -89,17 +89,20 @@
         .passport-button img {
             height: 30px;
         }
+        googlemaps-button img {
+            height: 30px;
+        }
     </style>
 </head>
 <body>
     <section class="main-section">  
         <div class="banner">
-            <img src="/static/Images/Screenshot 2025-01-23 002417.png" alt="UNCO Parking App Logo" class="logo" height="200" width="400">
+            <img src="/static\Images\UNCOPALogoBckRemvd.png" alt="UNCO Parking App Logo" class="logo" height="200" width="400">
         </div>
         
         <!-- Search Bar and Filter -->
         <div class="search-container">
-            <label class="search-label" for="searchBox">Search:</label>
+            <label class="search-label" for="searchBox"></label>
             <input type="text" id="searchBox" placeholder="Search for a location...">
             <button onclick="searchLocation()">Search</button>
             <div class="filter-container">
@@ -117,7 +120,9 @@
 
         <!-- Buttons -->
         <div class="buttons-container">
-            <button onclick="openGoogleMaps()">Open in Google Maps</button>
+            <button onclick="openGoogleMaps()" class="googlemaps-button">
+                <img src="/static/Images/google-map-icon.png" alt="Google Maps-Logo">
+            </button>
             <button onclick="openPassportParking()" class="passport-button">
                 <img src="/static/Images/Passport-Logo.svg" alt="Passport-Logo">
             </button>
