@@ -22,6 +22,46 @@
             padding: 20px 0;
             background-color: rgb(255, 191, 0);
         }
+        .logo {
+            filter: drop-shadow(0px 0px 0px white); /* Ensures smooth edges */
+        }
+        .search-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            margin-top: 20px;
+            width: 80%;
+        }
+        .filter-label {
+            font-weight: bold;
+            color: white;
+        }
+        #searchBox {
+            width: 60%;
+            padding: 10px;
+            font-size: 16px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+        .search-container button {
+            padding: 10px 15px;
+            font-size: 16px;
+            border: none;
+            background-color: #FFD700;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        .filter-container {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+        .filter-container select {
+            padding: 8px;
+            font-size: 16px;
+            border-radius: 5px;
+        }
         .map-container {
             flex-grow: 1;
             width: 80%;
@@ -30,47 +70,57 @@
             margin: 20px 0;
         }
         .buttons-container {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
             width: 100%;
-            text-align: center;
             background-color: white;
             padding: 20px 0;
+        }
+        .buttons-container button {
+            padding: 10px 20px;
+            font-size: 16px;
+            border-radius: 5px;
+            border: none;
+            cursor: pointer;
+            background-color: #063970;
+            color: white;
+        }
+        .passport-button img {
+            height: 30px;
         }
     </style>
 </head>
 <body>
     <section class="main-section">  
         <div class="banner">
-            <img src="/static/Images/Screenshot 2025-01-23 002417.png" alt="UNCO Parking App Logo" class="logo" height="200"width="400">
+            <img src="/static/Images/Screenshot 2025-01-23 002417.png" alt="UNCO Parking App Logo" class="logo" height="200" width="400">
         </div>
-    
-        <div class="map-container" id="map">
-            <!-- Map will be embedded here -->
-        </div>
-    
-        <div class="buttons-container">
-            <div class="container">
-                <input type="text" id="searchBox" placeholder="Search for a location...">
-                <button onclick="searchLocation()">Search</button>
-            </div>
         
-            <div class="container">
-                <button onclick="openGoogleMaps()">Open in Google Maps</button>
-            </div>
-        
-            <div class="container">
-                <label for="filter">Filter Parking Lots:</label>
+        <!-- Search Bar and Filter -->
+        <div class="search-container">
+            <label class="search-label" for="searchBox">Search:</label>
+            <input type="text" id="searchBox" placeholder="Search for a location...">
+            <button onclick="searchLocation()">Search</button>
+            <div class="filter-container">
+                <label class="filter-label" for="filter">Filter:</label>
                 <select id="filter" onchange="filterParkingLots()">
                     <option value="all">All</option>
                     <option value="student">Student Parking</option>
                     <option value="faculty">Faculty Parking</option>
                 </select>
             </div>
-        
-            <div class="container">
-                <button onclick="openPassportParking()">
-                    <img src="/static/Images/Passport-Logo.svg" alt="Passport-Logo" class="logo">
-                </button>
-            </div>
+        </div>
+
+        <!-- Map -->
+        <div class="map-container" id="map"></div>
+
+        <!-- Buttons -->
+        <div class="buttons-container">
+            <button onclick="openGoogleMaps()">Open in Google Maps</button>
+            <button onclick="openPassportParking()" class="passport-button">
+                <img src="/static/Images/Passport-Logo.svg" alt="Passport-Logo">
+            </button>
         </div>
     </section>
 
