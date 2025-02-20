@@ -8,22 +8,35 @@
     <link rel="stylesheet" href="{% static 'css/styles.css' %}">
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
     <style>
-        .main-section {
+         .main-section {
             background-color: #063970;
             display: flex;
             flex-direction: column;
             align-items: center;
             padding: 20px;
             min-height: 100vh;
+            position: relative; /* Change from fixed to relative */
+            margin-top: 100px; /* Adjust this based on your banner height */
         }
+
         .banner {
             width: 100%;
-            text-align: center;
-            padding: 20px 0;
-            background-color: rgb(255, 255, 255);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px;
+            background-color: #f4cf03;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            height: 80px; /* Ensure this is set properly */
         }
+
         .logo {
-            filter: drop-shadow(0px 0px 0px white); /* Ensures smooth edges */
+            height: 140px; /* Reduced height to shrink banner */
+            width: auto;
         }
         .search-container {
             display: flex;
@@ -64,10 +77,10 @@
         }
         .map-container {
             flex-grow: 1;
-            width: 80%;
+            width: 90%;
             height: 500px;
             background-color: white;
-            margin: 20px 0;
+            margin: 20px;
         }
         .buttons-container {
             display: flex;
@@ -77,27 +90,29 @@
             background-color:#FFD700;
             padding: 20px 0;
         }
-        .buttons-container button {
-            padding: 10px 20px;
-            font-size: 16px;
-            border-radius: 5px;
-            border: none;
-            cursor: pointer;
-            background-color: #063970;
-            color: white;
-        }
+       
         .passport-button img {
             height: 30px;
         }
         googlemaps-button img {
             height: 30px;
+
         }
     </style>
 </head>
 <body>
     <section class="main-section">  
         <div class="banner">
-            <img src="/static\Images\UNCOPALogoBckRemvd.png" alt="UNCO Parking App Logo" class="logo" height="200" width="400">
+            <img src="/static\Images\Parking App Logo.png" alt="UNCO Parking App Logo" class="logo" height="200" width="400">
+              <!-- Buttons -->
+            <div class="buttons">
+                <button onclick="openGoogleMaps()" class="googlemaps-button">
+                    <img src="/static/Images/google-map-icon.png" alt="Google Maps-Logo"height="30" width="30">
+                </button>
+                <button onclick="openPassportParking()" class="passport-button">
+                    <img src="/static/Images/Passport-Logo.svg" alt="Passport-Logo">
+                </button>
+            </div>
         </div>
         
         <!-- Search Bar and Filter -->
@@ -118,15 +133,7 @@
         <!-- Map -->
         <div class="map-container" id="map"></div>
 
-        <!-- Buttons -->
-        <div class="buttons-container">
-            <button onclick="openGoogleMaps()" class="googlemaps-button">
-                <img src="/static/Images/google-map-icon.png" alt="Google Maps-Logo">
-            </button>
-            <button onclick="openPassportParking()" class="passport-button">
-                <img src="/static/Images/Passport-Logo.svg" alt="Passport-Logo">
-            </button>
-        </div>
+      
     </section>
 
     <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
