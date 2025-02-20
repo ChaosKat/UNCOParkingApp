@@ -1,0 +1,84 @@
+.main-section {
+    background-color: #063970;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    min-height: 100vh;
+}
+.banner {
+    width: 100%;
+    text-align: center;
+    padding: 20px 0;
+    background-color: rgb(255, 255, 255);
+}
+.logo {
+    filter: drop-shadow(0px 0px 0px white); /* Ensures smooth edges */
+}
+.search-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-top: 20px;
+    width: 80%;
+}
+.filter-label {
+    font-weight: bold;
+    color: white;
+}
+#searchBox {
+    width: 60%;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+.search-container button {
+    padding: 10px 15px;
+    font-size: 16px;
+    border: none;
+    background-color: #f4cf03;
+    cursor: pointer;
+    border-radius: 5px;
+}
+.filter-container {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+.filter-container select {
+    padding: 8px;
+    font-size: 16px;
+    border-radius: 5px;
+}
+.map-container {
+    flex-grow: 1;
+    width: 80%;
+    height: 500px;
+    background-color: white;
+    margin: 20px 0;
+}
+.buttons-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    width: 100%;
+    background-color:#FFD700;
+    padding: 20px 0;
+}
+.buttons-container button {
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    background-color: #063970;
+    color: white;
+}
+.passport-button img {
+    height: 30px;
+}
+googlemaps-button img {
+    height: 30px;
+}
