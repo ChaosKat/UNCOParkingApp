@@ -25,7 +25,7 @@
             align-items: center;
             justify-content: space-between;
             padding: 10px;
-            background-color: #f4cf03;
+            background-color:#f6b000;
             position: fixed;
             top: 0;
             left: 0;
@@ -61,7 +61,7 @@
             padding: 10px 15px;
             font-size: 16px;
             border: none;
-            background-color: #f4cf03;
+            background-color: #f6b000;
             cursor: pointer;
             border-radius: 5px;
         }
@@ -87,7 +87,7 @@
             justify-content: center;
             gap: 20px;
             width: 100%;
-            background-color:#FFD700;
+            background-color:#f6b000;
             padding: 20px 0;
         }
        
@@ -138,20 +138,20 @@
 
     <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
     <script>
-        var map = L.map('map').setView([40.4028, -104.7003], 13);
+        var map = L.map('map').setView([40.4028, -104.7003], 16.5);
         
         L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
             attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
         }).addTo(map);
         
         L.marker([40.4028, -104.7003]).addTo(map)
-            .bindPopup('A pretty CSS popup.<br> Easily customizable.')
+            .bindPopup('UNIVERSITY OF NORTHERN COLORADO.<br> West Campus.')
             .openPopup();
         
 <!-- new        adding markers -->
         var parkingLots = [
                 {
-                    name: 'D Lot',
+                    name: 'D Lot <br>',
                     types: ['student', 'faculty'],  // Accessible by both student and faculty
                     coordinates: [
                         [40.404734, -104.699724],
@@ -160,6 +160,19 @@
                         [40.404478, -104.700387],
                         [40.404052, -104.699095],
                         [40.404408, -104.698828]
+                    ]
+                },
+                {
+                    name: 'Y Lot',
+                    types: ['student', 'faculty'],  // Accessible by both student and faculty
+                    coordinates: [
+                        [40.405490, -104.702790],
+                        [40.405615, -104.703004],
+                        [40.406154, -104.702939],
+                        [40.405927, -104.703778],
+                        [40.404358, -104.704730],
+                        [40.403882, -104.703943],
+                        [40.404041, -104.703740]
                     ]
                 },
                 {
