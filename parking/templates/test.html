@@ -626,6 +626,67 @@
             window.onload = function() {
                 addMarkers(parkingLots, 'all');
             };
+            //Search Location function
+            function searchLocation(){
+                // Get the search input value and converts to lowercase for case-insensitive search
+                var searchVal = document.getElementById('searchBox').value.toLowerCase();
+                // Remove existing markers
+                currentMarkers.forEach(function(marker) {
+                    map.removeLayer(marker);
+                });
+                // If search is empty, just show all lots based on current filter
+                if (searchVal.trim() === '') {
+                    var filterValue = document.getElementById('filter').value;
+                    addMarkers(parkingLots, filterValue);
+                    return;
+                }
+                currentMarkers = [];  // Reset the marker array
+                // Get current filter value
+                var filterValue = document.getElementById('filter').value;
+                // Find matching parking lots
+                var matchingLots = parkingLots.filter(function(lot) {
+                    // Check if the lot name contains the search value
+                    var nameMatch = lot.name.toLowerCase().includes(searchVal);
+                    
+                    // Apply filter if not 'all'
+                    var filterMatch = filterValue === 'all' || lot.types.includes(filterValue);
+                    
+                    // Match if both name and filter criteria match
+                    return nameMatch && filterMatch;
+                    });
+                    // Add matching lots to the map
+                    matchingLots.forEach(function(lot) {
+                        var polygon = L.polygon(lot.coordinates, {
+                            color: lot.types.includes('student') ? 'blue' : 'gold',
+                            weight: 2,
+                            fillColor: lot.types.includes('student') ? 'blue' : 'orange',
+                            fillOpacity: 0.3
+                        }).addTo(map).bindPopup(lot.name);
+                        
+                        currentMarkers.push(polygon);  // Store the polygon in the array
+                    });
+                    // If there are matches, fit map bounds to show all matching lots
+                    if (matchingLots.length > 0) {
+                        var bounds = [];
+                        matchingLots.forEach(function(lot) {
+                            lot.coordinates.forEach(function(coordinate) {
+                                bounds.push(coordinate);
+                            });
+                        });
+                        map.fitBounds(bounds);
+                    } else {
+                        // If no matches, show an alert
+                        alert("No parking lots found matching '" + searchVal + "'");
+                    }
+                }
+                    // Also add event listener for 'Enter' key in search box
+                    document.getElementById('searchBox').addEventListener('keypress', function(event) {
+                        if (event.key === 'Enter') {
+                            searchLocation();
+                        }
+                    });
+                        
+                
         </script>
     <script src="{% static 'js/scripts.js' %}"></script>
 </body>
