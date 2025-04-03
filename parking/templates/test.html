@@ -101,6 +101,20 @@
             height: 30px;
 
         }
+        .popup-title {
+            font-size: 20px;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        .popup-text {
+            font-size: 14px;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        .map-button {
+            font-size: 14px;
+        }
+
     </style>
 </head>
 
@@ -164,9 +178,9 @@
         
 <!-- new        adding markers -->
         var parkingLots = [
-                {
-                    name: 'D Lot <br> Passport Code:6003  <br> <a href="https://maps.app.goo.gl/QYXjQaq7cuJ8pkbYA" target="_blank" class="map-button">Open in Google Maps</a>',
-                    types: ['student', 'faculty'],  // Accessible by both student and faculty
+                        {
+                    name: '<div class="popup-title">D Lot</div><div class="popup-text">Passport Code: 6003</div><div><a href="https://maps.app.goo.gl/QYXjQaq7cuJ8pkbYA" target="_blank" class="map-button">Open in Google Maps</a></div>',
+                    types: ['student', 'faculty'],
                     coordinates: [
                         [40.404734, -104.699724],
                         [40.404680, -104.700071],
@@ -177,8 +191,8 @@
                     ]
                 },
                 {
-                    name: 'E Lot <br> Passport Code:N/A  <br> <a href="https://maps.app.goo.gl/9yr2hoiChPgHeAMR6" target="_blank" class="map-button">Open in Google Maps</a>',
-                    types: ['faculty'],  // Accessible by faculty
+                    name: '<div class="popup-title">E Lot</div><div class="popup-text">Passport Code: N/A</div><div><a href="https://maps.app.goo.gl/9yr2hoiChPgHeAMR6" target="_blank" class="map-button">Open in Google Maps</a></div>',
+                    types: ['faculty'],
                     coordinates: [
                         [40.403376, -104.697501],
                         [40.403727, -104.697247],
@@ -191,8 +205,8 @@
                     ]
                 },
                 {
-                    name: 'F Lot <br> Passport Code: N/A  <a href="https://maps.app.goo.gl/nFGQr53itj3THDaC8" target="_blank" class="map-button">Open in Google Maps</a>',
-                    types: ['faculty'],  // Accessible by faculty
+                    name: '<div class="popup-title">F Lot</div><div class="popup-text">Passport Code: N/A</div><div><a href="https://maps.app.goo.gl/nFGQr53itj3THDaC8" target="_blank" class="map-button">Open in Google Maps</a></div>',
+                    types: ['faculty'],
                     coordinates: [
                         [40.401908, -104.697752],
                         [40.402174, -104.697779],
@@ -203,12 +217,11 @@
                         [40.402272, -104.698600],
                         [40.402018, -104.698601],
                         [40.401907, -104.698466],
-                        
                     ]
                 },
                 {
-                    name: 'H Lot <br> Passport Code:  <a href="https://maps.app.goo.gl/QoanLibZGJJXKdB6A" target="_blank" class="map-button">Open in Google Maps</a>',
-                    types: ['faculty'],  // Accessible by faculty
+                    name: '<div class="popup-title">H Lot</div><div class="popup-text">Passport Code: N/A </div><div><a href="https://maps.app.goo.gl/QoanLibZGJJXKdB6A" target="_blank" class="map-button">Open in Google Maps</a></div>',
+                    types: ['faculty'],
                     coordinates: [
                         [40.400685, -104.701426],
                         [40.400680, -104.701492],
@@ -218,12 +231,11 @@
                         [40.401305, -104.701334],
                         [40.401216, -104.701335],
                         [40.401171, -104.701439],
-                        
                     ]
                 },
                 {
-                    name: 'I Lot South <br> Passport Code: 6005 <a href="https://maps.app.goo.gl/VMjFk2RygMzbCeAa8" target="_blank" class="map-button">Open in Google Maps</a>',
-                    types: ['student','faculty'],  // Accessible by faculty/student
+                    name: '<div class="popup-title">I Lot South</div><div class="popup-text">Passport Code: 6005</div><div><a href="https://maps.app.goo.gl/VMjFk2RygMzbCeAa8" target="_blank" class="map-button">Open in Google Maps</a></div>',
+                    types: ['student','faculty'],
                     coordinates: [
                         [40.399457, -104.697257],
                         [40.399590, -104.697246],
@@ -236,12 +248,11 @@
                         [40.400063, -104.697610],
                         [40.399646, -104.697612],
                         [40.399450, -104.697519],
-                        
                     ]
                 },
                 {
-                    name: 'I Lot Middle <br> Passport Code: 6005 <br><a href="https://maps.app.goo.gl/567EpsFbpMVHP7yY9" target="_blank" class="map-button">Open in Google Maps</a>',
-                    types: ['student','faculty'],  // Accessible by faculty/student
+                    name: '<div class="popup-title">I Lot Middle</div><div class="popup-text">Passport Code: 6005</div><div><a href="https://maps.app.goo.gl/567EpsFbpMVHP7yY9" target="_blank" class="map-button">Open in Google Maps</a></div>',
+                    types: ['student','faculty'],
                     coordinates: [
                         [40.401092, -104.697556],
                         [40.401084, -104.697192],
@@ -251,8 +262,8 @@
                     ]
                 },
                 {
-                    name: 'I Lot North <br> Passport Code: 6005 <br><a href="https://maps.app.goo.gl/11gBjwZXwcerDzx59" target="_blank" class="map-button">Open in Google Maps</a>',
-                    types: ['student','faculty'],  // Accessible by faculty/student
+                    name: '<div class="popup-title">I Lot North</div><div class="popup-text">Passport Code: 6005</div><div><a href="https://maps.app.goo.gl/11gBjwZXwcerDzx59" target="_blank" class="map-button">Open in Google Maps</a></div>',
+                    types: ['student','faculty'],
                     coordinates: [
                         [40.401611, -104.697626],
                         [40.401607, -104.697564],
@@ -271,10 +282,9 @@
                         [40.401911, -104.697625]
                     ]
                 },
-                
                 {
-                    name: 'Y Lot <br> Passport Code: 6017 <br> <a href="https://maps.app.goo.gl/R2GckmMyTpd22N6c8" target="_blank" class="map-button">Open in Google Maps</a>',
-                    types: ['student', 'faculty'],  // Accessible by both student and faculty
+                    name: '<div class="popup-title">Y Lot</div><div class="popup-text">Passport Code: 6017</div><div><a href="https://maps.app.goo.gl/R2GckmMyTpd22N6c8" target="_blank" class="map-button">Open in Google Maps</a></div>',
+                    types: ['student', 'faculty'],
                     coordinates: [
                         [40.405490, -104.702790],
                         [40.405615, -104.703004],
@@ -285,8 +295,8 @@
                     ]
                 },
                 {
-                    name: 'L Lot <br> Passport Code: 6008  <br> <a href="https://maps.app.goo.gl/9bCZ58vwWXQ5zaZp7" target="_blank" class="map-button">Open in Google Maps</a>',
-                    types: ['student', 'faculty'],  // Accessible by both student and faculty
+                    name: '<div class="popup-title">L Lot</div><div class="popup-text">Passport Code: 6008</div><div><a href="https://maps.app.goo.gl/9bCZ58vwWXQ5zaZp7" target="_blank" class="map-button">Open in Google Maps</a></div>',
+                    types: ['student', 'faculty'],
                     coordinates: [
                         [40.405513, -104.702775],
                         [40.405196, -104.702028],
@@ -295,8 +305,8 @@
                     ]
                 },
                 {
-                    name: 'M Lot <br> Passport Code: 6009 <br> <a href="https://maps.app.goo.gl/xaLGF44ZZAPq1ig89" target="_blank" class="map-button">Open in Google Maps</a>',
-                    types: ['student', 'faculty'],  // Accessible by both student and faculty
+                    name: '<div class="popup-title">M Lot</div><div class="popup-text">Passport Code: 6009</div><div><a href="https://maps.app.goo.gl/xaLGF44ZZAPq1ig89" target="_blank" class="map-button">Open in Google Maps</a></div>',
+                    types: ['student', 'faculty'],
                     coordinates: [
                         [40.401990, -104.705027],
                         [40.402006, -104.704152],
@@ -305,8 +315,8 @@
                     ]
                 },
                 {
-                    name: 'X Lot <br> Passport Code: 6024 <br> <a href="https://maps.app.goo.gl/c35ERNuZou1EgGvg9" target="_blank" class="map-button">Open in Google Maps</a>',
-                    types: ['student', 'faculty'],  // Accessible by both student and faculty
+                    name: '<div class="popup-title">X Lot</div><div class="popup-text">Passport Code: 6024</div><div><a href="https://maps.app.goo.gl/c35ERNuZou1EgGvg9" target="_blank" class="map-button">Open in Google Maps</a></div>',
+                    types: ['student', 'faculty'],
                     coordinates: [
                         [40.405427, -104.704616],
                         [40.405398, -104.704858],
@@ -315,8 +325,8 @@
                     ]
                 },
                 {
-                    name: 'C Lot <br> Passport Code: 6002 <br> <a href="https://maps.app.goo.gl/xQeo1EfhUWKGhh4m8" target="_blank" class="map-button">Open in Google Maps</a>',
-                    types: ['student', 'faculty'],  // Accessible by both student and faculty
+                    name: '<div class="popup-title">C Lot</div><div class="popup-text">Passport Code: 6002</div><div><a href="https://maps.app.goo.gl/xQeo1EfhUWKGhh4m8" target="_blank" class="map-button">Open in Google Maps</a></div>',
+                    types: ['student', 'faculty'],
                     coordinates: [
                         [40.402753, -104.696819],
                         [40.402759, -104.695344],
@@ -325,8 +335,8 @@
                     ]
                 },
                 {
-                    name: 'A1 Lot <br> Passport Code: 6000 <br> <a href="https://maps.app.goo.gl/NLsnxfDJVtFjKkVQ9" target="_blank" class="map-button">Open in Google Maps</a>',
-                    types: ['student', 'faculty'],  // Accessible by both student and faculty
+                    name: '<div class="popup-title">A1 Lot</div><div class="popup-text">Passport Code: 6000</div><div><a href="https://maps.app.goo.gl/NLsnxfDJVtFjKkVQ9" target="_blank" class="map-button">Open in Google Maps</a></div>',
+                    types: ['student', 'faculty'],
                     coordinates: [
                         [40.405396, -104.695108],
                         [40.404745, -104.695428],
@@ -336,8 +346,8 @@
                     ]
                 },
                 {
-                    name: 'A2 Lot <br> Passport Code: 6000 <br> <a href="https://maps.app.goo.gl/JUWj15CKVUq15EPVA" target="_blank" class="map-button">Open in Google Maps</a>',
-                    types: ['student', 'faculty'],  // Accessible by both student and faculty
+                    name: '<div class="popup-title">A2 Lot</div><div class="popup-text">Passport Code: 6000</div><div><a href="https://maps.app.goo.gl/JUWj15CKVUq15EPVA" target="_blank" class="map-button">Open in Google Maps</a></div>',
+                    types: ['student', 'faculty'],
                     coordinates: [
                         [40.405396, -104.695108],
                         [40.405463, -104.695200],
@@ -348,10 +358,9 @@
                         [40.404793, -104.695467]
                     ]
                 },
-
                 {
-                    name: 'J Lot <br> Passport Code: 6006 <br> <a href="https://maps.app.goo.gl/Y2zjnRP9opMM75S77" target="_blank" class="map-button">Open in Google Maps</a>',
-                    types: ['student', 'faculty'],  // Accessible by both student and faculty
+                    name: '<div class="popup-title">J Lot</div><div class="popup-text">Passport Code: 6006</div><div><a href="https://maps.app.goo.gl/Y2zjnRP9opMM75S77" target="_blank" class="map-button">Open in Google Maps</a></div>',
+                    types: ['student', 'faculty'],
                     coordinates: [
                         [40.400195, -104.697848],
                         [40.400122, -104.697773],
@@ -371,8 +380,8 @@
                     ]
                 },
                 {
-                    name: 'Angles Street Parking <br> Passport Code: N/A <br> <a href="https://maps.app.goo.gl/XLHeBe7oqEuDGRtS7" target="_blank" class="map-button">Open in Google Maps</a>',
-                    types: ['faculty'],  // Accessible only by faculty
+                    name: '<div class="popup-title">Angles Street Parking</div><div class="popup-text">Passport Code: N/A</div><div><a href="https://maps.app.goo.gl/XLHeBe7oqEuDGRtS7" target="_blank" class="map-button">Open in Google Maps</a></div>',
+                    types: ['faculty'],
                     coordinates: [
                         [40.404599, -104.700327],
                         [40.404499, -104.700405],
@@ -381,8 +390,8 @@
                     ]
                 },
                 {
-                    name: 'T Lot <br> Passport Code: 6014 <br> <a href="https://maps.app.goo.gl/ftFtp2MUAddR7QJm8" target="_blank" class="map-button">Open in Google Maps</a>', // This one's a little messed up
-                    types: ['student', 'faculty'],  // Accessible by both student and faculty
+                    name: '<div class="popup-title">T Lot</div><div class="popup-text">Passport Code: 6014</div><div><a href="https://maps.app.goo.gl/ftFtp2MUAddR7QJm8" target="_blank" class="map-button">Open in Google Maps</a></div>',
+                    types: ['student', 'faculty'],
                     coordinates: [
                         [40.40644016963837, -104.6959583190889],
                         [40.406289031168484, -104.69594490804447],
@@ -403,8 +412,8 @@
                     ]
                 },
                 {
-                    name: 'Tn Lot <br> Passport Code: <br> <a href="https://maps.app.goo.gl/zqDZeWNza4sQEcAz6" target="_blank" class="map-button">Open in Google Maps</a>',
-                    types: ['student', 'faculty'],  // Accessible by both student and faculty
+                    name: '<div class="popup-title">Tn Lot</div><div class="popup-text">Passport Code: </div><div><a href="https://maps.app.goo.gl/zqDZeWNza4sQEcAz6" target="_blank" class="map-button">Open in Google Maps</a></div>',
+                    types: ['student', 'faculty'],
                     coordinates: [
                         [40.408322223488305, -104.69547375747433],
                         [40.408322223488305, -104.6953277186511],
@@ -413,8 +422,8 @@
                     ]
                 },
                 {
-                    name: 'R Lot <br> Passport Code: <br> <a href="https://maps.app.goo.gl/a7SzVpr9DFTeezPW6" target="_blank" class="map-button">Open in Google Maps</a>',
-                    types: ['student', 'faculty'],  // Accessible by both student and faculty
+                    name: '<div class="popup-title">R Lot</div><div class="popup-text">Passport Code: </div><div><a href="https://maps.app.goo.gl/a7SzVpr9DFTeezPW6" target="_blank" class="map-button">Open in Google Maps</a></div>',
+                    types: ['student', 'faculty'],
                     coordinates: [
                         [40.41225425051831, -104.69543928471363],
                         [40.412244039352416, -104.69487602084696],
@@ -427,8 +436,8 @@
                     ]
                 },
                 {
-                    name: 'V Lot <br> Passport Code: <br> <a href="https://maps.app.goo.gl/RbJ1AGbFVjNxuW3c9" target="_blank" class="map-button">Open in Google Maps</a>',
-                    types: ['student', 'faculty'],  // Accessible by both student and faculty
+                    name: '<div class="popup-title">V Lot</div><div class="popup-text">Passport Code: </div><div><a href="https://maps.app.goo.gl/RbJ1AGbFVjNxuW3c9" target="_blank" class="map-button">Open in Google Maps</a></div>',
+                    types: ['student', 'faculty'],
                     coordinates: [
                         [40.40810120275439, -104.69439908595433],
                         [40.40809099095833, -104.69326987601208],
@@ -437,8 +446,8 @@
                     ]
                 },
                 {
-                    name: 'Q Lot <br> Passport Code: 6011 <br> <a href="https://maps.app.goo.gl/1qtmAFgmJ6NnYdRy5" target="_blank" class="map-button">Open in Google Maps</a>',
-                    types: ['student', 'faculty'],  // Accessible by both student and faculty
+                    name: '<div class="popup-title">Q Lot</div><div class="popup-text">Passport Code: 6011</div><div><a href="https://maps.app.goo.gl/1qtmAFgmJ6NnYdRy5" target="_blank" class="map-button">Open in Google Maps</a></div>',
+                    types: ['student', 'faculty'],
                     coordinates: [
                         [40.40779480594564, -104.69256177181335],
                         [40.40779276357724, -104.69206288095998],
@@ -471,8 +480,8 @@
                     ]
                 },
                 {
-                    name: 'ZW Lot <br> Passport Code:6023 <br> <a href="https://maps.app.goo.gl/wDFdxJU2mrQBAeVN6" target="_blank" class="map-button">Open in Google Maps</a>',
-                    types: ['faculty'],  // Accessible only by faculty
+                    name: '<div class="popup-title">ZW Lot</div><div class="popup-text">Passport Code: 6023</div><div><a href="https://maps.app.goo.gl/wDFdxJU2mrQBAeVN6" target="_blank" class="map-button">Open in Google Maps</a></div>',
+                    types: ['student', 'faculty'],
                     coordinates: [
                         [40.40954573414025, -104.69303367856003],
                         [40.409543691825, -104.69285128835558],
@@ -498,8 +507,8 @@
                     ]
                 },
                 {
-                    name: 'ZS Lot <br> Passport Code: <br> <a href="https://maps.app.goo.gl/FXhfdZ99Uhi3rr649" target="_blank" class="map-button">Open in Google Maps</a>',
-                    types: ['student', 'faculty'],  // Accessible by both student and faculty
+                    name: '<div class="popup-title">ZS Lot</div><div class="popup-text">Passport Code: </div><div><a href="https://maps.app.goo.gl/FXhfdZ99Uhi3rr649" target="_blank" class="map-button">Open in Google Maps</a></div>',
+                    types: ['student', 'faculty'],
                     coordinates: [
                         [40.40879228634693, -104.69156531284291],
                         [40.40873714319602, -104.69156531284291],
@@ -513,8 +522,8 @@
                     ]
                 },
                 {
-                    name: 'S Lot <br> Passport Code: 6013 <br> <a href="https://maps.app.goo.gl/d1YfDU8ceJu7faQH8" target="_blank" class="map-button">Open in Google Maps</a>',
-                    types: ['student'],  // Only students can park here
+                    name: '<div class="popup-title">S Lot</div><div class="popup-text">Passport Code: 6013</div><div><a href="https://maps.app.goo.gl/d1YfDU8ceJu7faQH8" target="_blank" class="map-button">Open in Google Maps</a></div>',
+                    types: ['student'],
                     coordinates: [
                         [40.4091193, -104.6917380],
                         [40.4092285, -104.6917365],
@@ -527,8 +536,8 @@
                     ]
                 },
                 {
-                    name: 'U Lot <br> Passport Code: 6015 <br> <a href="https://maps.app.goo.gl/3oji574bvDwcvyWJ7" target="_blank" class="map-button">Open in Google Maps</a>',
-                    types: ['student', 'faculty'],  // Accessible by both students and faculty
+                    name: '<div class="popup-title">U Lot</div><div class="popup-text">Passport Code: 6015</div><div><a href="https://maps.app.goo.gl/3oji574bvDwcvyWJ7" target="_blank" class="map-button">Open in Google Maps</a></div>',
+                    types: ['student', 'faculty'],
                     coordinates: [
                         [40.409068428909514, -104.69157830554667],
                         [40.40898265100721, -104.69159976321778],
@@ -538,8 +547,8 @@
                     ]
                 },
                 {
-                    name: 'KW Lot <br> Passport Code: N/A <br> <a href="https://maps.app.goo.gl/H6gRw4cZPixYnYo17" target="_blank" class="map-button">Open in Google Maps</a>',
-                    types: ['faculty'],  // Only faculty can park here
+                    name: '<div class="popup-title">KW Lot</div><div class="popup-text">Passport Code: N/A</div><div><a href="https://maps.app.goo.gl/H6gRw4cZPixYnYo17" target="_blank" class="map-button">Open in Google Maps</a></div>',
+                    types: ['faculty'],
                     coordinates: [
                         [40.4118550, -104.6921343],
                         [40.4117462, -104.6921350],
@@ -556,8 +565,8 @@
                     ]
                 },
                 {
-                    name: 'KE Lot <br> Passport Code: 6007 <br> <a href="https://maps.app.goo.gl/fHiS9cNBJX8HmVZb8" target="_blank" class="map-button">Open in Google Maps</a>',
-                    types: ['student'],  // Only students can park here
+                    name: '<div class="popup-title">KE Lot</div><div class="popup-text">Passport Code: 6007</div><div><a href="https://maps.app.goo.gl/fHiS9cNBJX8HmVZb8" target="_blank" class="map-button">Open in Google Maps</a></div>',
+                    types: ['student'],
                     coordinates: [
                         [40.41165956347562, -104.69173380488817],
                         [40.41112040703266, -104.69171771163481],
@@ -568,8 +577,8 @@
                     ]
                 },
                 {
-                    name: 'Young Lot <br> Passport Code: N/A <br> <a href="https://maps.app.goo.gl/uqPU4zvHvYn1Qep97" target="_blank" class="map-button">Open in Google Maps</a>',
-                    types: ['faculty'],  // Only faculty can park here
+                    name: '<div class="popup-title">Young Lot</div><div class="popup-text">Passport Code: N/A</div><div><a href="https://maps.app.goo.gl/uqPU4zvHvYn1Qep97" target="_blank" class="map-button">Open in Google Maps</a></div>',
+                    types: ['faculty'],
                     coordinates: [
                         [40.4104567, -104.6936789],
                         [40.4104552, -104.6935433],
@@ -580,8 +589,8 @@
                     ]
                 },
                 {
-                    name: 'Jackson Sports Complex Parking <br> Passport Code: 6020 <br> <a href="https://maps.app.goo.gl/s9ugAfWPGDe8bJHy8" target="_blank" class="map-button">Open in Google Maps</a>',
-                    types: ['student', 'faculty'],  // Accessible by both students and faculty
+                    name: '<div class="popup-title">Jackson Sports Complex Parking</div><div class="popup-text">Passport Code: 6020</div><div><a href="https://maps.app.goo.gl/s9ugAfWPGDe8bJHy8" target="_blank" class="map-button">Open in Google Maps</a></div>',
+                    types: ['student', 'faculty'],
                     coordinates: [
                         [40.4083246, -104.6871690],
                         [40.4082736, -104.6871342],
