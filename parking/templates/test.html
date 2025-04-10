@@ -102,17 +102,29 @@
 
         }
         .popup-title {
-            font-size: 20px;
+            font-size: 21px;
             font-weight: bold;
             margin-bottom: 5px;
         }
         .popup-text {
-            font-size: 14px;
+            font-size: 16px;
             font-weight: bold;
             margin-bottom: 5px;
         }
         .map-button {
             font-size: 14px;
+        }
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #e1e1e1; 
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #063970; 
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #2467ad; 
         }
 
     </style>
@@ -628,9 +640,9 @@
                 // Add the filtered polygons to the map
                 filteredLots.forEach(function(lot) {
                     var polygon = L.polygon(lot.coordinates, {
-                        color: lot.types.includes('student') ? 'blue' : 'gold',  // Faculty lots in yellow, student lots in blue
+                        color: lot.types.includes('student') ? 'blue' : '#da9100',  // Faculty lots in yellow, student lots in blue
                         weight: 2,
-                        fillColor: lot.types.includes('student') ? 'blue' : 'orange',
+                        fillColor: lot.types.includes('student') ? 'blue' : '#ff8c00',
                         fillOpacity: 0.3
                     }).addTo(map).bindPopup(lot.name);
 
