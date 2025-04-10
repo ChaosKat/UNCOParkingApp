@@ -719,6 +719,24 @@
                             searchLocation();
                         }
                     });
+document.addEventListener('click', function (e) {
+    if (e.target.closest('.popup-text')) {
+      const text = e.target.closest('.popup-text').innerText;
+      const match = text.match(/Passport Code:\s*(\d+)/); // only digits
+      
+      if (match && match[1]) {
+        const code = match[1];
+        navigator.clipboard.writeText(code).then(() => {
+          const el = e.target.closest('.popup-text');
+          const original = el.innerHTML;
+          el.innerHTML = `Passport Code: ${code} <span style="font-size: 0.8em; font-weight: normal;"> Code copied to clipboard!</span>`;
+          setTimeout(() => {
+            el.innerHTML = original;
+          }, 1700);
+        });
+      }
+    }
+  });
 
 
                         
