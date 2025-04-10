@@ -94,22 +94,40 @@
             padding: 20px 0;
         }
        
-        .passport-button img {
-            height: 30px;
+        .passport-button, .googlemaps-button {
+            background-color:#f5e3b1;
+            color: white; /* Or black depending on contrast preference */
+            border: none;
+            padding: 10px 16px;
+            border-radius: 6px;
+            font-weight: bold;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px; /* space between icon and text */
+            text-decoration: none;
+            transition: background-color 0.3s ease;
         }
-        googlemaps-button img {
-            height: 30px;
 
+        .passport-button:hover, .googlemaps-button:hover {
+            background-color: #a89b78; /* slightly darker on hover */
+        }
+
+        .passport-button img,
+        .googlemaps-button img {
+            height: 30px;
         }
         .popup-title {
             font-size: 21px;
             font-weight: bold;
             margin-bottom: 5px;
+            font-family: 'Questa Slab', serif;
         }
         .popup-text {
             font-size: 16px;
             font-weight: bold;
             margin-bottom: 5px;
+            font-family: 'Questa Slab', serif;
         }
         .map-button {
             font-size: 14px;
@@ -118,13 +136,13 @@
             width: 10px;
         }
         ::-webkit-scrollbar-track {
-            background: #e1e1e1; 
+            background: #f3f1f1; 
         }
         ::-webkit-scrollbar-thumb {
             background: #063970; 
         }
         ::-webkit-scrollbar-thumb:hover {
-            background: #2467ad; 
+            background: #3976b8; 
         }
 
     </style>
@@ -151,7 +169,7 @@
 
             }
             function openPassportParking(){
-                window.open('https://www.passportparking.com','_blank');
+                window.open('https://paywithpassport.com/guest','_blank');
             }
         </script>
         
@@ -190,7 +208,7 @@
         
 <!-- new        adding markers -->
         var parkingLots = [
-                        {
+                {
                     name: '<div class="popup-title">D Lot</div><div class="popup-text">Passport Code: 6003</div><div><a href="https://maps.app.goo.gl/QYXjQaq7cuJ8pkbYA" target="_blank" class="map-button">Open in Google Maps</a></div>',
                     types: ['student', 'faculty'],
                     coordinates: [
